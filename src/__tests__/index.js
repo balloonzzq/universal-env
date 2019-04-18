@@ -1,9 +1,21 @@
 import {createElement, Component} from 'rax';
 import renderer from 'rax-test-renderer';
-import Mod from '../';
+import { isWeb, isNode, isWeex, isReactNative } from '../';
 
-describe('Mod', () => {
-  it('test typeof Mod', () => {
-    expect(typeof Mod).toEqual('function');
+describe('env', () => {
+  it('web environment value is boolean', () => {
+    expect(typeof isWeb).toEqual('boolean');
+  });
+
+  it('node environment value is boolean', () => {
+    expect(typeof isNode).toEqual('boolean');
+  });
+
+  it('weex environment value is boolean', () => {
+    expect(typeof isWeex).toEqual('boolean');
+  });
+
+  it('react native environment value is boolean', () => {
+    expect(typeof isReactNative).toEqual('boolean');
   });
 });
